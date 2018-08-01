@@ -1,8 +1,5 @@
 package org.zycus.tinyurl.model;
 
-import org.springframework.data.annotation.Id;
-
-
 public class TinyUrlModel
 {
 
@@ -11,16 +8,6 @@ public class TinyUrlModel
       this.urlIdentifier = urlIdentifier;
       this.requestUrl = requestUrl;
       this.shortUrl = shortUrl;
-   }
-
-   public Long getId()
-   {
-      return id;
-   }
-
-   public void setId(Long id)
-   {
-      this.id = id;
    }
 
    public String getRequestUrl()
@@ -53,8 +40,6 @@ public class TinyUrlModel
       this.urlIdentifier = urlIdentifier;
    }
 
-   @Id
-   Long id;
    String urlIdentifier;
    String requestUrl;
    String shortUrl;

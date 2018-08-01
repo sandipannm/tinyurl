@@ -5,8 +5,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 import org.zycus.tinyurl.model.TinyUrlModel;
 import org.zycus.tinyurl.repository.TinyUrlRepository;
@@ -28,8 +26,6 @@ public class TinyUrlDaoImpl implements TinyUrlDao
    }
 
    @Override
-   @Cacheable(value = "tinyUrls", sync = true)
-   @Scheduled(fixedDelay = 10000, initialDelay = 10000)
    public List<TinyUrlModel> getUrl()
    {
       LOGGER.info("Retrieving all urls");

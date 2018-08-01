@@ -46,7 +46,7 @@ public class TinyUrlServiceImpl implements TinyUrlService
       if (!isShortUrlPresent)
       {
          final Random rnd = new Random();
-         Long id = rnd.nextLong();
+         Long id = Long.valueOf(rnd.nextInt(Integer.MAX_VALUE));
          String uniqueID = IDConverter.INSTANCE.createUniqueID(id);
          String baseString = formatLocalURLFromShortener(localURL);
          shortenedURL = baseString + uniqueID;
